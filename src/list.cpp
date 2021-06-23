@@ -36,12 +36,15 @@ void List::add_item(){
         print_menu();
 }
 void List::delete_item(){
-    cout << "****************delete item ************";
-    cout << "Select item to deleted";
+    cout << "****************delete item ************\n";
+    cout << "Select item to deleted : \n";
     if(list.size()){
         for(int v=0 ;  v < (int)list.size() ; v++){
             cout << v << " : " << list[v] << "\n";
         }
+        int choiceNum;
+        cin >> choiceNum;
+        list.erase(list.begin()+choiceNum);
     }else{ cout << "No item to delete";}
 
     print_menu();
